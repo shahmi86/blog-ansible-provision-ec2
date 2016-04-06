@@ -5,7 +5,7 @@ tasks:
    notify:
     - restart rsyslog
 
-- name: Ensure hostfile is correct
+ - name: Ensure hostfile is correct
       lineinfile:
         dest: /etc/hosts
         owner: root
