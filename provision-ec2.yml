@@ -8,3 +8,8 @@
    roles:
     - provision-ec2 
 
+ - hosts: launched
+   remote_user: root
+   gather_facts: True
+   roles:
+    - common
