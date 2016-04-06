@@ -35,8 +35,8 @@
  - name: Associate Elastic IP to instance
    ec2_eip:
    region: "{{ ec2.region }}"
-    instance_id: "{{ ec2.instances.id }}"
-    ip: "{{ ec2_elastic_ip }}"
+   instance_id: "{{ ec2.instances.id }}"
+   ip: "{{ ec2_elastic_ip }}"
 
 
  - name: Wait for the instances to boot by checking the ssh port
