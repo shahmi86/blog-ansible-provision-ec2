@@ -32,6 +32,16 @@
              ec2_ip_address={{item.public_ip}}
    with_items: ec2.instances
 
+ - name: Add Elastic IP to instances
+   module: ec2_eip
+   region: "{{ ec2.region }}"
+    in_vpc: yes
+    instance_id: "{{ ec2.instances.id }}"
+    ip: "{{ item }}"
+  with_indexed_items: "{{ ec2.elastic_ips }}"
+  when: ec2.elastic_ips
+
+
  - name: Wait for the instances to boot by checking the ssh port
    wait_for: host={{item.public_ip}} port=22 delay=60 timeout=320 state=started
    with_items: ec2.instances
