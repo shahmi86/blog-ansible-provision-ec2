@@ -8,7 +8,7 @@
    roles:
     - provision-ec2 
 
-- hosts: dev03.moneylion.com
+ - hosts: dev03.moneylion.com
    gather_facts: true
    user: root
    roles:
