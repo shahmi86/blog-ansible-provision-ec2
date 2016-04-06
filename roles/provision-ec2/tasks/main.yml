@@ -34,7 +34,7 @@
 
 
  - name: Wait for the instances to boot by checking the ssh port
-   wait_for: host={{item.public_ip}} port=22 delay=360 timeout=600 state=started
+   wait_for: host={{item.public_ip}} port=22 delay=80 timeout=320 state=started
    with_items: ec2.instances
 
  - name: Add the instances to known hosts
