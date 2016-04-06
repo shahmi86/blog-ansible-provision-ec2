@@ -1,4 +1,3 @@
-
 ---
  - name: Provision EC2 Box
    local_action:
