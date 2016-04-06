@@ -7,4 +7,9 @@
     - include_vars: ec2_vars/{{type}}.yml
    roles:
     - provision-ec2 
+
+- hosts: dev03.moneylion.com
+   gather_facts: true
+   user: root
+   roles:
     - common
