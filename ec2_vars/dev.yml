@@ -1,5 +1,5 @@
 ec2_keypair: ""
-ec2_security_group: "default"
+ec2_security_group: "sg-24d72b41"
 ec2_instance_type: "t2.medium"
 ec2_image: "ami-2c6e7e42"
 ec2_subnet_ids: ['subnet-dacc2dad']
