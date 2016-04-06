@@ -8,3 +8,4 @@ ec2_tag_Name: "dev03.moneylion.com"
 ec2_tag_Type: "webserver"
 ec2_tag_Environment: "development"
 ec2_volume_size: 16
+ec2_elastic_ip: "52.69.81.48"
