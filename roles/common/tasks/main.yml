@@ -5,14 +5,3 @@ tasks:
    notify:
     - restart rsyslog
 
- - name: Ensure hostfile is correct
-      lineinfile:
-        dest: /etc/hosts
-        owner: root
-        group: root
-        mode: 0644
-        line: "127.0.0.1 dev03.moneylion.com"
-        state: present
-        create: yes
-      notify:
-        - restart rsyslog
