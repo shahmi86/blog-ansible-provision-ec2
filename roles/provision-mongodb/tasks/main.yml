@@ -20,11 +20,11 @@
      count: 1
      volumes: 
      - device_name: /dev/xvda
-       volume_type: gp2
+       device_type: gp2
        volume_size: "{{ root_volume_size }}"
        delete_on_termination: true
      - device_name: /dev/xvdb
-       volume_type: io1
+       device_type: io1
        iops: 4000
        volume_size: "{{ data_volume_size }}"
        delete_on_termination: true
