@@ -16,3 +16,9 @@
     - build-essential
     - python-software-properties
     - git
+
+- name: Create file locale-check.ship for Cloud
+  stat: path=/var/lib/cloud/instance/locale-check.skip
+    register: st
+  template: src=locale-check.j2 dest=/var/lib/cloud/instance/locale-check.skip
+    when: not st.stat.exists
