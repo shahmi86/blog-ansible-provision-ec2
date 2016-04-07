@@ -9,4 +9,4 @@ ec2_tag_Type: "webserver"
 ec2_tag_Environment: "development"
 ec2_volume_size: 10
 ec2_tag_Provision: "Ansible"
-key_type: "rsa,dsa"
+key_type: "ecdsa-sha2-nistp256"
