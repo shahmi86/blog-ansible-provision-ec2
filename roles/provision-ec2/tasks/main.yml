@@ -6,6 +6,10 @@
      group_id: "{{ ec2_security_group }}"
      instance_type: "{{ ec2_instance_type }}"
      image: "{{ ec2_image }}"
+     user_data: |
+      #!/bin/bash 
+      echo "{{ ec2_tag_Name }}" > /etc/hostname
+      echo "{{ LCALL }}" >> /etc/default/locale
      vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
      region: "{{ ec2_region }}"
      instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Environment":"{{ec2_tag_Environment}}","Provision":"{{ec2_tag_Provision}}"}'
