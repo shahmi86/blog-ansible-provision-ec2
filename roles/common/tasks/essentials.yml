@@ -2,7 +2,7 @@
 - name: Essentials | Ensure that the repositories are update
   apt:
     update_cache: yes
-
+  ignore_errors: yes
 #- name: Essentials | Upgrade the Server
 #  apt:
 #    upgrade: safe
