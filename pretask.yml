@@ -8,7 +8,7 @@
 #   roles:
 #    - provision-ec2 
 
- - hosts: alll
+ - hosts: all
    remote_user: root
    gather_facts: True
    roles:
