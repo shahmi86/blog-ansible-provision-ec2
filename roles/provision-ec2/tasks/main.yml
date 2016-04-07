@@ -39,4 +39,5 @@
 
  - name: Add the instances to known hosts
    local_action: command sh -c 'ssh-keyscan -t {{ key_type }} {{ item.public_ip }} >> $HOME/.ssh/known_hosts'
+   #local_action: known_hosts key="{{ item.public_ip }} ecdsa-sha2-nistp256 {{ host_key.stdout }}" name={{ item.public_ips }} state=present
    with_items: ec2.instances
