@@ -1,5 +1,5 @@
 ---
- - name: Provision EC2 Box
+ - name: Provision MongoDB
    local_action:
      module: ec2
      key_name: "{{ ec2_keypair }}"
