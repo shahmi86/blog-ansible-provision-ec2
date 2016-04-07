@@ -5,7 +5,7 @@
     - stop ntp
 
 - name: Ensure ntp is updated with amazon pool
-  command: /usr/sbin/ntpdate -u 0.amazon.ntp.org
+  command: /usr/sbin/ntpdate -u 0.amazon.pool.ntp.org
   notify:
     - start ntp
 
