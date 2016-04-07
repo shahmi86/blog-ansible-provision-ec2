@@ -3,7 +3,7 @@
   service: name=ntp state=restarted
 
 - name: start ntp
-  service: name=ntp state=start
+  service: name=ntp state=started
 
 - name: stop ntp
   service: name=ntp state=stop
