@@ -1,0 +1,13 @@
+---
+- name: ensure ntp is installed
+  apt: pkg=ntp state=installed
+  notify:
+    - stop ntp
+
+- name: Ensure ntp is updated with amazon pool
+  command: /usr/sbin/ntpdate -u 0.amazon.ntp.org
+  notify:
+    - start ntp
+
+- name: ensure ntp is enabled and running
+  service: name=ntp enabled=yes state=running
