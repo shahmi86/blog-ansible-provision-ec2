@@ -1,4 +1,4 @@
---
+---
 - name: nginx restart
   command: "nginx -t"
   changed_when: true
