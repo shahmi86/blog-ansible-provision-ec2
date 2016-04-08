@@ -6,7 +6,7 @@
 
 - name: Create tomcat8 websites folder
   file: path=/home/www/{{item.0}}/{{item.1}}/{{item.2}} state=directory
-        - ['{{ ec_tag_Name}}']
+        - [{{ ec_tag_Name}}]
         - ['webapps']
         - ['ROOT']
 
