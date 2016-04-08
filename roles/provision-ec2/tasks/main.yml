@@ -11,6 +11,7 @@
       echo "{{ ec2_tag_Name }}" > /etc/hostname
       echo "{{ LCALL }}" >> /etc/default/locale
       touch /var/lib/cloud/instance/locale-check.skip
+      shutdown -r now
      vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
      region: "{{ ec2_region }}"
      instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Environment":"{{ec2_tag_Environment}}","Provision":"{{ec2_tag_Provision}}"}'
@@ -45,7 +46,7 @@
 
 
  - name: Wait for the instances to boot by checking the ssh port
-   wait_for: host={{item.public_ip}} port=22 delay=80 timeout=320 state=started
+   wait_for: host={{item.public_ip}} port=22 delay=240 timeout=320 state=started
    with_items: ec2.instances
 
 # - name: Add the instances to known hosts
