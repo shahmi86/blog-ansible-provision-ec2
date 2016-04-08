@@ -13,7 +13,7 @@
     mode: 0644
   notify: tomcat8 restart
 
- name: Adding index.html to tomcat websites foler
+- name: Adding index.html to tomcat websites foler
   files:
     src: files/index.html
     dest: /home/www/{{ec2_tag_Name}}/webapps/ROOT/index.html
