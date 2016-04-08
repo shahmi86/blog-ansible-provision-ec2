@@ -10,4 +10,5 @@ ec2_tag_Environment: "development"
 ec2_volume_size: 10
 ec2_tag_Provision: "Ansible"
 key_type: "ecdsa-sha2-nistp256"
-LCALL: 'LC_ALL="en_US.UTF-8"'
+locales_lcall: "LC_ALL=en_US.UTF-8"
+elastic_ipaddress: "52.77.88.215"
