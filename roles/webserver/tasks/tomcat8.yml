@@ -1,10 +1,16 @@
 ---
 
-- name: Create tomcat8 websites folder
-  command: /usr/sbin/mkdir -p /home/www/{{ec2_tag_Name}}/webapps/ROOT/
-  notify: nginx restart
+#- name: Create tomcat8 websites folder
+#  command: /usr/sbin/mkdir -p /home/www/{{ec2_tag_Name}}/webapps/ROOT/
+#  notify: nginx restart
 
-- name: Adding tomcat8 server config
+- name: Create tomcat8 websites folder
+  file: path=/home/www/{{item.0}}/{{item.1}}/{{item.2}} state=directory
+        - ['{{ ec_tag_Name}}']
+        - ['webapps']
+        - ['ROOT']
+
+- name: Modify server.xml
   template:
     src: tomcat_config/server.j2
     dest: /etc/tomcat8/server.xml
