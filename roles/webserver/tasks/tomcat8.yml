@@ -4,11 +4,16 @@
 #  command: /usr/sbin/mkdir -p /home/www/{{ec2_tag_Name}}/webapps/ROOT/
 #  notify: nginx restart
 
+#- name: Create tomcat8 websites folder
+#  file: path=/home/www/{{item.0}}/{{item.1}}/{{item.2}} state=directory
+#        - {{ ec_tag_Name}}
+#        - ['webapps']
+#        - ['ROOT']
+
 - name: Create tomcat8 websites folder
   file: path=/home/www/{{item.0}}/{{item.1}}/{{item.2}} state=directory
-        - {{ ec_tag_Name}}
-        - ['webapps']
-        - ['ROOT']
+  with_items: folders 
+
 
 - name: Modify server.xml
   template:
