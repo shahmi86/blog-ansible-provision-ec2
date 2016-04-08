@@ -13,8 +13,8 @@
     mode: 0644
   notify: tomcat8 restart
 
-- name: Adding index.html to tomcat websites foler
-  files:
+- name: Adding index.html to tomcat websites folder
+  template:
     src: files/index.html
     dest: /home/www/{{ec2_tag_Name}}/webapps/ROOT/index.html
     owner: tomcat8
