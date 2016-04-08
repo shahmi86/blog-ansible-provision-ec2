@@ -4,7 +4,7 @@
   command: /usr/sbin/mkdir -p /home/www/{{ec2_tag_Name}}/webapps/ROOT/
   notify: nginx restart
 
- name: Adding tomcat8 server config
+- name: Adding tomcat8 server config
   template:
     src: tomcat_config/server.j2
     dest: /etc/tomcat8/server.xml
