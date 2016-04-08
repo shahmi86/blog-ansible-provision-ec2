@@ -1,0 +1,17 @@
+--
+- name: nginx restart
+  command: "nginx -t"
+  changed_when: true
+  notify:
+    - do nginx restart
+
+- name: do nginx restart
+  service:
+    name:  nginx
+    state: restarted
+
+- name: tomcat8 restart
+  service:
+    name:  tomcat8
+    state: restarted
+

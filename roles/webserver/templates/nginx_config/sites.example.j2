@@ -1,0 +1,43 @@
+
+server {
+    server_name  {{ec2_tag_Name}};
+    rewrite ^(.*) https://{{ ec2_tag_Name }}$1 permanent;
+}
+
+
+server {
+	server_name {{ ec2_tag_Name }};
+	listen 443 ssl;
+	add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+	ssl_buffer_size 4k;
+	ssl_stapling on;
+	ssl_stapling_verify on;
+	ssl_trusted_certificate /etc/ssl/certs/stapling.trusted.crt;
+	resolver 8.8.8.8 8.8.4.4 valid=300s;
+	resolver_timeout 5s;
+	ssl on;
+	ssl_session_timeout 10m;
+	ssl_protocols TLSv1.2 TLSv1.1 TLSv1;
+	ssl_prefer_server_ciphers on;
+	ssl_ciphers "ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:RSA+3DES:!RC4:HIGH:!ADH:!AECDH:!MD5";
+	ssl_certificate /etc/ssl/certs/moneylion.com.crt;
+	ssl_certificate_key /etc/ssl/private/moneylion.com.key;
+	ssl_dhparam /etc/ssl/private/dhparams.pem;
+	ssl_session_cache shared:SSL:10m;
+
+        location / {
+                include proxy.conf;
+                proxy_pass http://127.0.0.1:8080/;
+                proxy_redirect off;
+        }
+
+	location /nginx_status {
+		stub_status on;
+		access_log off;
+		# only allow local access
+		#allow 127.0.0.1;
+		#deny all;
+	}
+
+}
+

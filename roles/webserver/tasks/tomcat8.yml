@@ -1,0 +1,25 @@
+---
+
+- name: Create tomcat8 websites folder
+  command: /usr/sbin/mkdir -p /home/www/{{ec2_tag_Name}}/webapps/ROOT/
+  notify: nginx restart
+
+ name: Adding tomcat8 server config
+  template:
+    src: tomcat_config/server.j2
+    dest: /etc/tomcat8/server.xml
+    owner: root
+    group: tomcat8
+    mode: 0644
+  notify: tomcat8 restart
+
+ name: Adding index.html to tomcat websites foler
+  files:
+    src: files/index.html
+    dest: /home/www/{{ec2_tag_Name}}/webapps/ROOT/index.html
+    owner: tomcat8
+    group: admin
+    mode: 0755
+  
+- name: ensure tomcat is enabled and running
+  service: name=tomcat8 enabled=yes state=running
