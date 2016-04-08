@@ -9,9 +9,16 @@
     mode: 0644
   notify: nginx restart
 
-- name: Adding symlink in sites-enabled
-  command: /usr/sbin/ln -s /etc/nginx/sites-available/{{ec2_tag_Name}} /etc/nginx/sites-enabled/{{ec2_tag_Name}}
-  notify: nginx restart
+#- name: Adding symlink in sites-enabled
+#  command: /usr/sbin/ln -s /etc/nginx/sites-available/{{ec2_tag_Name}} /etc/nginx/sites-enabled/{{ec2_tag_Name}}
+#  notify: nginx restart
+
+- name: Creating symlinks
+  file:
+    src: "{{ item.ngx_src }}"
+    dest: "{{ item.ngx_dest }}"
+    state: link
+  with_items: symlinks
 
 - name: ensure nginx is enabled and running
   service: name=nginx enabled=yes state=running

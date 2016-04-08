@@ -1,0 +1,4 @@
+---
+# defaults file for lucazz.symlinks
+symlinks:
+    - { ngx_src: '/etc/nginx/sites-available/{{ec2_tag_Name}}', dest: '/etc/nginx/sites-enabled/{{ec2_tag_Name}}' }
