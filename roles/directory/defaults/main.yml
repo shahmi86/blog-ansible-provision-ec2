@@ -1,20 +1,9 @@
 genericdirectories_directories:
-  - path: "/home/www/{{ ec2_tag_Name }}"
-    owner: "tomcat"
-    group: "admin"
-    mode: "0775"
-    recurse: "yes"
-
-  - path: "/home/www/{{ ec2_tag_Name }}/webapps"
-    owner: "tomcat"
-    group: "admin"
-    mode: "0775"
-    recurse: "yes"
-
   - path: "/home/www/{{ ec2_tag_Name }}/webapps/ROOT"
     owner: "tomcat"
     group: "admin"
     mode: "0775"
     recurse: "yes"
 
-genericdirectories_directories_removed: []
+
+#genericdirectories_directories_removed: []
