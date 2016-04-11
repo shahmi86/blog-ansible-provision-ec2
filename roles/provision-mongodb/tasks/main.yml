@@ -32,7 +32,7 @@
       #instance="{{ item.id }}"
       name="{{ ec2_tag_Name }}"
       volume_size="{{ data_volume_size }}"
-      volume_type: io1
+      volume_type= io1
       iops: 100
       device_name: /dev/xvdb
       delete_on_termination: yes
