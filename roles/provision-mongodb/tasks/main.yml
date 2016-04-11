@@ -20,8 +20,9 @@
      count: 1
      volumes: 
      - device_name: /dev/xvda
-       device_type: gp2
-       volume_size: "{{ root_volume_size }}"
+       device_type: io1
+       volume_size: "{{ data_volume_size }}"
+       iops: 500
        delete_on_termination: true
    register: ec2
 
