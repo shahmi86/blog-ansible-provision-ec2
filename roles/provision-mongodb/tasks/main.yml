@@ -19,7 +19,11 @@
      wait: true
      count: 1
      volumes: 
-     - device_name: /dev/xvda
+     - device_name: /dev/sda1
+       device_type: gp1
+       volume_size: "{{ root_volume_size }}"
+       delete_on_termination: true
+     - device_name: /dev/sdb
        device_type: io1
        volume_size: "{{ data_volume_size }}"
        iops: 500
