@@ -1,0 +1,15 @@
+ec2_keypair: ""
+ec2_security_group: "sg-7f9c501b"
+ec2_instance_type: "t2.small"
+ec2_image: "ami-43d20720"
+ec2_subnet_ids: ['subnet-8a373ce8']
+ec2_region: "ap-southeast-1"
+ec2_tag_Name: "mongodev03.moneylion.comm"
+ec2_tag_Type: "mongodb"
+ec2_tag_Environment: "db"
+root_volume_size: 10
+data_volume_size: 50
+ec2_tag_Provision: "Ansible"
+key_type: "ecdsa-sha2-nistp256"
+LCALL: "LC_ALL=en_US.UTF-8" 
+elastic_ipaddress: "52.77.105.159"

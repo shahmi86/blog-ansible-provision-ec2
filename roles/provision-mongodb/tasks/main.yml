@@ -29,14 +29,14 @@
    with_items: ec2.instances
 
  - ec2_vol:
-      instance="{{ item.id }}"
+      #instance="{{ item.id }}"
       name="{{ ec2_tag_Name }}"
       volume_size="{{ data_volume_size }}"
       volume_type: io1
-      iops: 1000
+      iops: 100
       device_name: /dev/xvdb
       delete_on_termination: yes
-   with_items: ec2.instances
+   register: ec2_vol
     
 
  - ec2_eip:
