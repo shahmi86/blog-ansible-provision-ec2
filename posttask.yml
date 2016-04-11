@@ -5,7 +5,7 @@
    pre_tasks:
     - include_vars: ec2_vars/{{type}}.yml
    roles:
-   # - common
-   # - ntp
+    - common
+    - ntp
     - directory
     - webserver
