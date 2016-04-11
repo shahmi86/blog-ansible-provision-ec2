@@ -2,7 +2,7 @@ genericdirectories_directories:
   - path: "/home/www/{{ ec2_tag_Name }}/webapps/ROOT"
     owner: "tomcat"
     group: "admin"
-    mode: "0775"
+    mode: "775"
     recurse: "yes"
 
 
