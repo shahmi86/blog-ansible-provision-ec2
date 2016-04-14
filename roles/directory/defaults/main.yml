@@ -4,6 +4,11 @@ genericdirectories_directories:
     group: "admin"
     mode: "775"
     recurse: "yes"
-
+   
+  - path: "/etc/nginx/sites-available/{{ ec2_tag_Name }}"
+    owner: "root"
+    group: "root"
+    mode: "644"
+    recurse: "yes"
 
 #genericdirectories_directories_removed: []
