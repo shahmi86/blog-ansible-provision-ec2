@@ -2,10 +2,3 @@
 # defaults file for lucazz.symlinks
 symlinks:
     - { src: '/etc/nginx/sites-available/{{ec2_tag_Name}}', dest: '/etc/nginx/sites-enabled/{{ec2_tag_Name}}' }
-
-
-folders::
-    - { 0: '{{ec2_tag_Name}}' } 
-    - { 1: 'webapps' }
-    - { 2: 'ROOT' }
-   
