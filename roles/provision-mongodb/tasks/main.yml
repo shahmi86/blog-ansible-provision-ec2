@@ -20,7 +20,7 @@
      count: 1
      volumes: 
      - device_name: /dev/sda1
-       device_type: gp1
+       device_type: gp2
        volume_size: "{{ root_volume_size }}"
        delete_on_termination: true
      - device_name: /dev/xvda
