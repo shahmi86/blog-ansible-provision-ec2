@@ -1,17 +1,13 @@
 ---
-
 - name: Adding sites config
   template:
-    src: "nginx_config/sites.example.j2"
+    src: nginx_config/sites.example.j2
     dest: /etc/nginx/sites-available/{{ec2_tag_Name}}
     owner: root
     group: root
     mode: 0644
   notify: nginx restart
 
-#- name: Adding symlink in sites-enabled
-#  command: /usr/sbin/ln -s /etc/nginx/sites-available/{{ec2_tag_Name}} /etc/nginx/sites-enabled/{{ec2_tag_Name}}
-#  notify: nginx restart
 
 - name: Creating symlinks
   file:
