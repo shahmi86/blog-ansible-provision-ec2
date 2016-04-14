@@ -1,7 +1,7 @@
 ec2_keypair: ""
 ec2_security_group: "sg-7f9c501b"
 ec2_instance_type: "t2.small"
-ec2_image: "ami-b638edd5"
+ec2_image: "ami-23b26740"
 ec2_subnet_ids: ['subnet-8a373ce8']
 ec2_region: "ap-southeast-1"
 ec2_tag_Name: "mongodev03.moneylion.com"
