@@ -14,7 +14,7 @@
       shutdown -r now
      vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
      region: "{{ ec2_region }}"
-     instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Environment":"{{ec2_tag_Environment}}","Provision":"{{ec2_tag_Provision}}"}'
+     instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Env":"{{ec2_tag_Env}}","Provision":"{{ec2_tag_Provision}}"}'
      assign_public_ip: yes
      wait: true
      count: 1

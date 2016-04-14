@@ -6,7 +6,7 @@ ec2_subnet_ids: ['subnet-8a373ce8']
 ec2_region: "ap-southeast-1"
 ec2_tag_Name: "dev03.moneylion.com"
 ec2_tag_Type: "webserver"
-ec2_tag_Environment: "development"
+ec2_tag_Env: "development"
 ec2_volume_size: 10
 ec2_tag_Provision: "Ansible"
 key_type: "ecdsa-sha2-nistp256"
