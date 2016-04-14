@@ -19,11 +19,11 @@
      wait: true
      count: 1
      volumes: 
-     - device_name: /dev/sda1
+     - device_name: /dev/xvda
        device_type: gp2
        volume_size: "{{ root_volume_size }}"
        delete_on_termination: true
-     - device_name: /dev/xvda
+     - device_name: /dev/xvdb
        device_type: io1
        volume_size: "{{ data_volume_size }}"
        iops: 500
@@ -34,11 +34,11 @@
    with_items: ec2.instances
 
 # - ec2_vol:
-      #instance="{{ item.id }}"
+#      instance="{{ item.id }}"
 #      name="{{ ec2_tag_Name }}"
 #      volume_size="{{ data_volume_size }}"
 #      volume_type= io1
-#      iops= 100
+#      iops= 500
 #      device_name: /dev/xvdb
 #      delete_on_termination: yes
 #   register: ec2_vol
